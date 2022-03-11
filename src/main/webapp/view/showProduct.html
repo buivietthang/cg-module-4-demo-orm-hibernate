@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr th:each="product,loop : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td><img th:src="${product.img}" width="300" height="250"></td>
+        <td th:text="${product.status}"></td>
+        <td th:text="${product.category.name}"></td>
+        <td><a th:href="@{/edit(index = ${loop.index})}">Edit</a></td>
+        <td><a th:href="@{/delete(index = ${loop.index})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>

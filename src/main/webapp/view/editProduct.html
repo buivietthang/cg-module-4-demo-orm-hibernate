@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    <table>
+        <tr th:object="${p}">
+            <td><input th:field="*{id}"></td>
+            <!--        tự động sinh ra name = "name" , id = "name" , value = "*{name}"-->
+            <td><input th:field="*{name}"></td>
+
+            <td><img th:src="${p.img}" width="300" height="250"></td>
+            <td><input th:field="*{img}" hidden></td>
+            <td><input type="file" name="uppImg"></td>
+
+            <td><input th:field="*{price}"></td>
+            <td><input type="date" th:field="*{date}"></td>
+            <td>
+                <button type="submit">Edit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
